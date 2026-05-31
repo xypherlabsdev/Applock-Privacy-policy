@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – AppLock Vault</title>
+  <style>
+    :root {
+      --bg:       #08080A;
+      --surface:  #0F0F11;
+      --card:     #16161A;
+      --cardhi:   #1C1C21;
+      --green:    #00E676;
+      --green-dim:rgba(0,230,118,0.10);
+      --green-line:rgba(0,230,118,0.28);
+      --text:     #FFFFFF;
+      --text2:    #B3B3B3;
+      --text3:    #7A7A80;
+      --divider:  rgba(255,255,255,0.07);
+      --err:      #FF5252;
+      --warn:     #FFB74D;
+      --radius:   18px;
+      --radius-sm:10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text2);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      padding: 0 0 80px;
+    }
+
+    /* ── Header ─────────────────────────────────────── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--divider);
+      padding: 36px 24px 28px;
+      text-align: center;
+    }
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--green-dim);
+      border: 1px solid var(--green-line);
+      border-radius: 100px;
+      padding: 6px 18px 6px 10px;
+      margin-bottom: 20px;
+    }
+    .brand-badge .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 6px var(--green);
+    }
+    .brand-badge span {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    header h1 {
+      color: var(--text);
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    header h1 em { color: var(--green); font-style: normal; }
+    .meta {
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--text3);
+      letter-spacing: 0.3px;
+    }
+
+    /* ── Layout ─────────────────────────────────────── */
+    main { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+    /* ── Section ────────────────────────────────────── */
+    section { margin-top: 36px; }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      color: var(--text);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    p { color: var(--text2); margin-bottom: 12px; }
+
+    /* ── Card ───────────────────────────────────────── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--divider);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 12px;
+    }
+    .card-title {
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-title .icon {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      background: var(--green-dim);
+      border: 1px solid var(--green-line);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .card p { margin-bottom: 0; font-size: 13.5px; }
+
+    /* ── List ───────────────────────────────────────── */
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    li {
+      color: var(--text2);
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    li::marker { color: var(--green); }
+
+    /* ── Tag chips ──────────────────────────────────── */
+    .tag {
+      display: inline-block;
+      background: var(--green-dim);
+      border: 1px solid var(--green-line);
+      color: var(--green);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 100px;
+      padding: 2px 10px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .tag.warn {
+      background: rgba(255,183,77,0.12);
+      border-color: rgba(255,183,77,0.3);
+      color: var(--warn);
+    }
+    .tag.err {
+      background: rgba(255,82,82,0.10);
+      border-color: rgba(255,82,82,0.28);
+      color: var(--err);
+    }
+
+    /* ── Alert box ──────────────────────────────────── */
+    .alert {
+      background: var(--green-dim);
+      border: 1px solid var(--green-line);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-bottom: 20px;
+      font-size: 13.5px;
+      color: var(--text2);
+    }
+    .alert strong { color: var(--green); }
+
+    /* ── Divider ────────────────────────────────────── */
+    hr { border: none; border-top: 1px solid var(--divider); margin: 32px 0; }
+
+    /* ── Footer ─────────────────────────────────────── */
+    footer {
+      margin-top: 60px;
+      padding: 28px 20px;
+      text-align: center;
+      border-top: 1px solid var(--divider);
+      background: var(--surface);
+    }
+    footer p { font-size: 12px; color: var(--text3); margin-bottom: 4px; }
+    footer a { color: var(--green); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    a { color: var(--green); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="brand-badge">
+    <span class="dot"></span>
+    <span>AppLock Vault</span>
+  </div>
+  <h1>Privacy <em>Policy</em></h1>
+  <p class="meta">Effective date: June 1, 2025 &nbsp;·&nbsp; Last updated: June 1, 2025</p>
+</header>
+
+<main>
+
+  <!-- Intro alert -->
+  <section>
+    <div class="alert">
+      <strong>Your privacy is our core promise.</strong> AppLock Vault is built on the principle that your personal data stays on your device. We do not sell, rent, or share your personal information with third parties for their own marketing purposes.
+    </div>
+  </section>
+
+  <!-- 1. Who We Are -->
+  <section>
+    <p class="section-label">Section 01</p>
+    <h2>Who We Are</h2>
+    <p>AppLock Vault ("we", "our", or "us") is a mobile application developed for Android devices. The app provides app locking, private file vault, intruder detection, guest mode, panic mode, and security intelligence features.</p>
+    <p>By downloading or using AppLock Vault, you agree to the collection and use of information in accordance with this Privacy Policy.</p>
+  </section>
+
+  <!-- 2. Information We Collect -->
+  <section>
+    <p class="section-label">Section 02</p>
+    <h2>Information We Collect</h2>
+    <p>We collect only what is necessary to deliver app functionality. Here is exactly what we collect and why:</p>
+
+    <div class="card">
+      <div class="card-title"><span class="icon">📊</span> Usage Access Statistics <span class="tag">On-Device Only</span></div>
+      <p>With your explicit permission, we read which app is currently in the foreground to show the lock screen when a protected app is opened. This data is processed locally and never transmitted to any server.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="icon">📷</span> Camera <span class="tag">On-Device Only</span></div>
+      <p>Used for two features: (1) <strong>Intruder selfie</strong> — captures a front-camera photo when someone enters the wrong unlock code. Photos are stored encrypted on your device and never uploaded. (2) <strong>AI Face Unlock</strong> — processes your face locally using an on-device ML model to verify your identity. No face data leaves your device.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="icon">📍</span> Location (Coarse) <span class="tag">On-Device Only</span></div>
+      <p>Used for two optional features: (1) <strong>Wi-Fi based profile switching</strong> — Android requires location permission to read Wi-Fi network names (SSID). We do not record or transmit your location. (2) <strong>Panic SOS</strong> — if you have enabled the panic feature with trusted contacts, your approximate location is included in the SOS SMS message sent to those contacts. This requires your explicit setup.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="icon">🔔</span> Notifications</div>
+      <p>We send local notifications for: protection status, intruder alerts, guest session timers, and panic/SOS events. We do not send marketing push notifications.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="icon">📱</span> SMS <span class="tag warn">Restricted</span></div>
+      <p>The <strong>Panic / SOS</strong> feature can send a silent text message containing a pre-configured emergency message and your location to contacts you have manually added. This is triggered only by you (via the panic button or shake gesture). We never send SMS without your knowledge or consent. This feature requires explicit opt-in.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="icon">🔥</span> Firebase Analytics & Crashlytics <span class="tag warn">Third Party</span></div>
+      <p>We use <strong>Google Firebase</strong> to collect anonymised crash reports and usage analytics. This helps us identify bugs and improve the app. Firebase may collect: device model, OS version, app version, crash stack traces, and anonymous usage events (e.g., screens viewed). Firebase does not receive your vault files, locked app list, PIN, or any biometric data. You can review Google's data practices at <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="icon">📣</span> Google AdMob (Advertising) <span class="tag warn">Third Party</span></div>
+      <p>AppLock Vault may display ads served by <strong>Google AdMob</strong>. AdMob may collect device identifiers (Advertising ID), IP address, and usage data to serve personalised or non-personalised ads depending on your consent and region. We do not pass any of your personal vault data or locked app information to AdMob. You can opt out of personalised ads in your Android device settings under <em>Google → Ads → Delete Advertising ID</em> or opt out of personalised ads. For more information, see <a href="https://policies.google.com/technologies/ads" target="_blank">Google's Advertising Policies</a>.</p>
+    </div>
+
+  </section>
+
+  <!-- 3. Data We Do NOT Collect -->
+  <section>
+    <p class="section-label">Section 03</p>
+    <h2>Data We Do <em style="color:var(--err);font-style:normal;">NOT</em> Collect</h2>
+    <ul>
+      <li>Your PIN, pattern, or password (stored encrypted on-device only)</li>
+      <li>Contents of your private vault (files are encrypted on-device)</li>
+      <li>The list of apps you have locked</li>
+      <li>Your face data or biometric templates</li>
+      <li>Intruder photos (stored locally, never uploaded)</li>
+      <li>Your contacts list (SOS contacts are stored locally only)</li>
+      <li>Your browsing history or activity in locked apps</li>
+    </ul>
+  </section>
+
+  <!-- 4. How We Use Information -->
+  <section>
+    <p class="section-label">Section 04</p>
+    <h2>How We Use Information</h2>
+    <ul>
+      <li>To provide and improve app features (locking, vault, face unlock)</li>
+      <li>To detect crashes and fix bugs (Firebase Crashlytics)</li>
+      <li>To understand general usage patterns and improve UX (Firebase Analytics)</li>
+      <li>To display advertisements and generate app revenue (AdMob)</li>
+      <li>To send local security alerts and notifications on your device</li>
+    </ul>
+    <p>We never use your data for profiling, selling to data brokers, or any purpose beyond what is listed above.</p>
+  </section>
+
+  <!-- 5. Permissions Explained -->
+  <section>
+    <p class="section-label">Section 05</p>
+    <h2>Permissions Explained</h2>
+    <p>Here is every Android permission AppLock Vault requests and exactly why:</p>
+    <ul>
+      <li><strong>PACKAGE_USAGE_STATS</strong> — detects foreground app to trigger lock screen</li>
+      <li><strong>SYSTEM_ALERT_WINDOW</strong> — draws the lock screen overlay above other apps</li>
+      <li><strong>CAMERA</strong> — intruder selfie on wrong code; face unlock enrollment and recognition</li>
+      <li><strong>ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION</strong> — Wi-Fi SSID reading for profile auto-switch; panic SOS location attachment</li>
+      <li><strong>SEND_SMS</strong> — panic SOS only, with explicit user setup and consent</li>
+      <li><strong>READ_MEDIA_IMAGES / VIDEO / AUDIO</strong> — importing files into the private vault</li>
+      <li><strong>FOREGROUND_SERVICE</strong> — keeps the lock service running in the background</li>
+      <li><strong>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</strong> — prevents OEM battery killers from stopping the lock service</li>
+      <li><strong>POST_NOTIFICATIONS</strong> — shows protection status and security alerts</li>
+      <li><strong>RECEIVE_BOOT_COMPLETED</strong> — auto-starts the lock service after device reboot</li>
+      <li><strong>USE_BIOMETRIC</strong> — fingerprint and biometric unlock</li>
+      <li><strong>INTERNET</strong> — required by Firebase and AdMob SDKs</li>
+    </ul>
+  </section>
+
+  <!-- 6. Data Storage & Security -->
+  <section>
+    <p class="section-label">Section 06</p>
+    <h2>Data Storage &amp; Security</h2>
+    <p>All sensitive data — including your PIN hash, vault files, intruder photos, and face enrollment data — is stored exclusively on your device. We use AES-256 encryption for vault files and PBKDF2 with salt for PIN/password hashing.</p>
+    <p>We do not operate servers that store your personal content. If you uninstall AppLock Vault, all locally stored data is deleted by the operating system.</p>
+    <p>No backup of sensitive data is allowed — we have explicitly disabled Android cloud backup for all app data (<code>android:allowBackup="false"</code>).</p>
+  </section>
+
+  <!-- 7. Third-Party Services -->
+  <section>
+    <p class="section-label">Section 07</p>
+    <h2>Third-Party Services</h2>
+    <p>The following third-party services are integrated into AppLock Vault. Each has its own Privacy Policy:</p>
+    <div class="card">
+      <div class="card-title"><span class="icon">🔥</span> Google Firebase</div>
+      <p>Analytics and crash reporting. <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy →</a></p>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">📣</span> Google AdMob</div>
+      <p>Mobile advertising. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy →</a></p>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">🤖</span> Google ML Kit / LiteRT</div>
+      <p>On-device face detection for the AI Face Unlock feature. All inference runs locally; no data is sent to Google's servers during face recognition. <a href="https://developers.google.com/ml-kit/terms" target="_blank">ML Kit Terms →</a></p>
+    </div>
+  </section>
+
+  <!-- 8. Children's Privacy -->
+  <section>
+    <p class="section-label">Section 08</p>
+    <h2>Children's Privacy</h2>
+    <p>AppLock Vault is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and you believe your child has provided us with personal information, please contact us so we can take the necessary steps.</p>
+  </section>
+
+  <!-- 9. Your Rights -->
+  <section>
+    <p class="section-label">Section 09</p>
+    <h2>Your Rights</h2>
+    <p>Depending on your location, you may have the following rights regarding your data:</p>
+    <ul>
+      <li><strong>Access</strong> — request a copy of data we hold about you</li>
+      <li><strong>Deletion</strong> — request deletion of your data (most data is already only on your device; uninstalling the app deletes it)</li>
+      <li><strong>Opt-out of personalised ads</strong> — via Android device settings → Google → Ads</li>
+      <li><strong>Data portability</strong> — your vault files are on your device; you can copy them at any time</li>
+    </ul>
+    <p>To exercise these rights, contact us at the email below.</p>
+  </section>
+
+  <!-- 10. Changes -->
+  <section>
+    <p class="section-label">Section 10</p>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by updating the "Last updated" date at the top of this page and, where appropriate, through an in-app notification. We encourage you to review this policy periodically.</p>
+    <p>Continued use of AppLock Vault after changes constitutes your acceptance of the revised policy.</p>
+  </section>
+
+  <!-- 11. Contact -->
+  <section>
+    <p class="section-label">Section 11</p>
+    <h2>Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please reach out:</p>
+    <div class="card">
+      <p>📧 <strong style="color:var(--text);">Email:</strong> <a href="mailto:xypherlabs.dev@gmail.com">xypherlabs.dev@gmail.com</a></p>
+    </div>
+    <p style="font-size:13px; color:var(--text3);">We aim to respond to all privacy-related inquiries within 7 business days.</p>
+  </section>
+
+  <hr />
+
+</main>
+
+<footer>
+  <p><strong style="color:var(--text);">AppLock Vault — Privacy &amp; Security</strong></p>
+  <p>© 2025 AppLock Vault. All rights reserved.</p>
+  <p style="margin-top:8px;"><a href="terms.html">Terms &amp; Conditions</a></p>
+</footer>
+
+</body>
+</html>

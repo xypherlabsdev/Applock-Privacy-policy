@@ -210,7 +210,7 @@
     <span>AppLock Vault</span>
   </div>
   <h1>Privacy <em>Policy</em></h1>
-  <p class="meta">Effective date: June 1, 2025 &nbsp;·&nbsp; Last updated: June 1, 2025</p>
+  <p class="meta">Effective date: June 1, 2025 &nbsp;·&nbsp; Last updated: July 26, 2026</p>
 </header>
 
 <main>
@@ -243,11 +243,11 @@
 
     <div class="card">
       <div class="card-title"><span class="icon">📷</span> Camera <span class="tag">On-Device Only</span></div>
-      <p>Used for two features: (1) <strong>Intruder selfie</strong> — captures a front-camera photo when someone enters the wrong unlock code. Photos are stored encrypted on your device and never uploaded. (2) <strong>AI Face Unlock</strong> — processes your face locally using an on-device ML model to verify your identity. No face data leaves your device.</p>
+      <p>Used for two features: (1) <strong>Intruder selfie</strong> — captures a front-camera photo when someone enters the wrong unlock code. Photos are stored privately in the app's internal storage (inaccessible to other apps) and are never uploaded. (2) <strong>AI Face Unlock</strong> — processes your face locally using an on-device ML model to verify your identity. No face data leaves your device.</p>
     </div>
 
     <div class="card">
-      <div class="card-title"><span class="icon">📍</span> Location (Coarse) <span class="tag">On-Device Only</span></div>
+      <div class="card-title"><span class="icon">📍</span> Location <span class="tag">On-Device Only</span></div>
       <p>Used for two optional features: (1) <strong>Wi-Fi based profile switching</strong> — Android requires location permission to read Wi-Fi network names (SSID). We do not record or transmit your location. (2) <strong>Panic SOS</strong> — if you have enabled the panic feature with trusted contacts, your approximate location is included in the SOS SMS message sent to those contacts. This requires your explicit setup.</p>
     </div>
 
@@ -313,14 +313,18 @@
       <li><strong>CAMERA</strong> — intruder selfie on wrong code; face unlock enrollment and recognition</li>
       <li><strong>ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION</strong> — Wi-Fi SSID reading for profile auto-switch; panic SOS location attachment</li>
       <li><strong>SEND_SMS</strong> — panic SOS only, with explicit user setup and consent</li>
-      <li><strong>READ_MEDIA_IMAGES / VIDEO / AUDIO</strong> — importing files into the private vault</li>
-      <li><strong>FOREGROUND_SERVICE</strong> — keeps the lock service running in the background</li>
+      <li><strong>FOREGROUND_SERVICE / FOREGROUND_SERVICE_SPECIAL_USE</strong> — keeps the lock service running in the background</li>
       <li><strong>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</strong> — prevents OEM battery killers from stopping the lock service</li>
       <li><strong>POST_NOTIFICATIONS</strong> — shows protection status and security alerts</li>
       <li><strong>RECEIVE_BOOT_COMPLETED</strong> — auto-starts the lock service after device reboot</li>
       <li><strong>USE_BIOMETRIC</strong> — fingerprint and biometric unlock</li>
+      <li><strong>USE_FULL_SCREEN_INTENT</strong> — shows the lock screen reliably over a protected app</li>
+      <li><strong>ACCESS_WIFI_STATE / ACCESS_NETWORK_STATE</strong> — reads the current Wi-Fi network name for profile auto-switch; checks connectivity for ads/analytics</li>
+      <li><strong>AD_ID</strong> — Google Advertising ID, used by AdMob to serve ads (see the AdMob section above)</li>
+      <li><strong>VIBRATE</strong> — haptic feedback on the lock screen</li>
       <li><strong>INTERNET</strong> — required by Firebase and AdMob SDKs</li>
     </ul>
+    <p><strong style="color:var(--text);">No storage or media permissions.</strong> Vault import uses the Android system photo/document picker, which grants access only to the individual files you pick — AppLock Vault never requests <code>READ_MEDIA_*</code> or storage permissions and cannot browse your gallery or files.</p>
   </section>
 
   <!-- 6. Data Storage & Security -->
@@ -398,7 +402,7 @@
 <footer>
   <p><strong style="color:var(--text);">AppLock Vault — Privacy &amp; Security</strong></p>
   <p>© 2025 AppLock Vault. All rights reserved.</p>
-  <p style="margin-top:8px;"><a href="terms.html">Terms &amp; Conditions</a></p>
+  <p style="margin-top:8px;"><a href="https://xypherlabsdev.github.io/Applock-Terms-Conditions/">Terms &amp; Conditions</a></p>
 </footer>
 
 </body>
